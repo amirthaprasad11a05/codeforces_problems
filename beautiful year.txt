@@ -1,0 +1,30 @@
+// beautiful year
+#include <iostream>
+using namespace std;
+
+bool Year(int y)
+{
+	int l=y%10;
+	int t=(y/10)%10;
+	int s=(y/100)%10;
+	int f=(y/1000)%10;
+	if (l!=t && l!=s && l!=f && t!=s && t!=f && s!=f)
+		return true;
+	return false;
+}
+int main()
+{
+	int y;
+	cin>>y;
+	int z=y+1;
+	while(true)
+	{
+		if (Year(z)==true)
+		{
+		    cout<<z;
+			break;
+		}
+		z++;
+	}
+	return 0;
+}

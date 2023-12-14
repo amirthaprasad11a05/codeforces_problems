@@ -1,0 +1,41 @@
+2. 
+// simple design
+# include<iostream>
+using namespace std;
+long long int sum(long long int i) {
+    long long int s=0;
+    while(i>0) {
+        s=s+(i%10);
+        i=i/10;
+    }
+    return s;
+}
+void beau(long long int x,long long int k) {
+    long long int m;
+    while(true) {
+        m=sum(x);
+        if(m%k==0) {
+            cout<<x<<endl;
+            break;
+        }
+        x++;
+        m=0;
+    }
+}    
+
+int main() {
+    long long int arr[10000][2];
+    long long int x,k;
+    int num;
+    cin>>num;
+    for(int i=0;i<num;i++) {
+        cin>>x;
+        cin>>k;
+        arr[i][0]=x;
+        arr[i][1]=k;
+    }
+    for(int i=0;i<num;i++) {
+        beau(arr[i][0],arr[i][1]);
+    }
+    return 0;
+}

@@ -1,0 +1,36 @@
+3.
+// add odd or subtract even
+#include <iostream>
+using namespace std;
+int main()
+{
+	long long int t;
+	cin>>t;
+	while (t--)
+	{
+		long long int a,b;
+		cin>>a;
+		cin>>b;
+		if (a==b)
+			cout<<0;
+		else
+		{
+			if (a%2==b%2)
+			{
+				if (a>b)
+					cout<<1;
+				else
+					cout<<2;
+			}
+			else
+			{
+				if (a>b)
+					cout<<2;
+				else
+					cout<<1;
+			}
+		}
+		cout << "\n";
+	}
+	return 0;
+}

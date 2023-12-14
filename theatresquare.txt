@@ -1,0 +1,36 @@
+codeforces:
+
+1. https://codeforces.com/problemset/page/1?order=BY_SOLVED_DESC
+1A theatre square:
+
+# include<stdio.h>
+int main() {
+    
+    long long int m,n,a;
+    
+    scanf("%lld",&m);
+    scanf("%lld",&n);
+    scanf("%lld",&a);
+    
+    long long int x=m/a;
+    long long int p=n/a;
+    
+    if(m%a==0 && n%a==0) {
+        long long int q=x*p;
+        printf("%lld",q);
+    }
+    else if(m%a==0 && n%a!=0) {
+        long long int r=(x*(p+1));
+        printf("%lld",r);
+    }
+    else if(m%a!=0 && n%a==0) {
+        long long int w=(p)*(x+1);
+        printf("%lld",w);
+    }
+    else if(m%a!=0 && n%a!=0) {
+        long long int y=(x+1)*(p+1);
+        printf("%lld",y);
+    }
+    return 0;
+}
+
