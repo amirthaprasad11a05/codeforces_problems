@@ -1,0 +1,51 @@
+14. Sum of cubes
+#include <iostream>
+using namespace std;
+# include<vector>
+#define TCas long long int t;cin>>t;while(t--)
+#define pqu priority_queue
+#define sortU(v) sort(v.begin(),v.end())
+#define sortD(v) sort(v.rbegin(),v.rend())
+#define pll pair<long long int,long long int>
+ 
+long long int BSearch(vector<long long int>&arr,long long int x) {
+    long long int l=0;
+    long long int r=(arr.size()-1);
+    while(l<=r) {
+        long long int m=(l+r)/2;
+        if (arr[m]==x)
+            return m;
+        if (arr[m]>x)
+            r=m-1;
+        if (arr[m]<x)
+            l=m+1;
+    }
+    return -1;
+}
+ 
+void Solve() {
+    long long int n;
+    cin>>n;
+    vector<long long int>ar;
+    for(long long int i=1;i<=10000;i++) {
+        ar.push_back(i*i*i);
+    }
+    bool f=false;
+    for(long long int i=0;i<ar.size();i++) {
+        if ((n-ar[i])>=0 && BSearch(ar,(n-ar[i]))!=-1) {
+            f=true;
+        }
+    }
+    if(f) {
+        cout << "YES"<<endl;
+    }
+    else  {
+        cout << "NO"<<endl;
+    }
+}
+ 
+int main() {
+    TCas
+        Solve();
+    return 0;
+}

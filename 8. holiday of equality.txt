@@ -1,0 +1,21 @@
+8. holiday of equality:
+#include <iostream>
+#include <vector>
+#include <algorithm>
+using namespace std;
+
+
+int main() {
+    long long int num;
+    cin>>num;
+    vector<long long int>v(num);
+    for(long long int i=0;i<num;i++)
+        cin>>v[i];
+    sort(v.begin(),v.end());
+    long long int s=0;
+    for(long long int i=0;i<num-1;i++)
+        if(v[i]<v[num-1])
+            s=s+(v[num-1]-v[i]);
+    cout<<s;
+    return 0;
+}
