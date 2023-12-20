@@ -1,0 +1,27 @@
+17. Yet Another Two Integers
+#include<iostream>
+#include<queue>
+using namespace std;
+#include<cmath>
+
+int main() {
+    long long int n;
+	cin>>n;
+	queue<long long int>qu;
+    for(long long int i=0;i<n;i++) {
+	    long long int x,y;
+		cin>>x;
+		cin>>y;
+		long long int n=abs(x-y);
+		if(n%10==0)
+			n=n/10;
+		else
+			n=(n/10)+1;
+		qu.push(n);
+	}
+	for (long long int i=0;i<n;i++) {
+	    cout<<qu.front()<<endl;
+		qu.pop();
+	}
+	return 0;
+}
