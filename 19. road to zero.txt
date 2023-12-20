@@ -1,0 +1,24 @@
+19. road to zero
+https://codeforces.com/problemset/problem/1342/A
+
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+void Solve() {
+    long long int x,y,a,b;
+	cin>>x>>y>>a>>b;
+	if(2*a<=b)
+		cout<<(x+y)*a;
+	else
+		cout<<min(x,y)*b+abs(x-y)*a;
+	cout<<"\n";
+}
+
+int main() {
+    long long int t;
+	cin>>t;
+	while(t--)
+		Solve();
+	return 0;
+}
