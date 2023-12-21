@@ -1,0 +1,57 @@
+21. odd selection
+https://codeforces.com/problemset/problem/1363/A
+
+#include <iostream>
+#include <vector>
+using namespace std;
+ 
+#define Test long long int t;cin>>t;while(t--)
+ 
+void Solve() {
+    long long int n,m,odd=0,even=0,s=0;
+	cin>>n>>m;
+	vector<long long int>arr(n);
+	for(long long int i=0;i<n;i++) {
+	    cin>>arr[i];
+		if(arr[i]%2==0) {
+		    even++;
+		}
+		else {
+		    odd++;
+		}
+		s+=arr[i];
+	}
+	if(m==n) {
+	    if(s%2!=0) {
+	        cout<<"YES";
+	    }
+		else {
+		    cout<<"NO";
+		}
+	}
+	else if(odd==n) {
+	    if(m%2==0) {
+	        cout<<"NO";
+	    }
+		else {
+		    cout<<"YES";
+		}
+	}
+	else if(even==n) {
+	    cout<<"NO";
+	}
+	else {
+	    if(odd!=0) {
+		    cout<<"YES";
+		}
+		else {
+		    cout<<"NO";
+		}
+	}
+	cout<<"\n";
+}
+int main() {
+    Test
+		Solve();
+	return 0;
+}
