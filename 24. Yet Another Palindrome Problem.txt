@@ -1,0 +1,48 @@
+24. Yet Another Palindrome Problem
+// https://codeforces.com/contest/1324/problem/B
+#include <iostream>
+#include<vector>
+using namespace std;
+#define T long long int t;cin>>t;while(t--)
+#define pll pair<long long int, long long int>
+ 
+long long int Binary(vector<long long int>&arr,long long int xx) {
+    long long int l= 0;
+    long long int r=arr.size()-1;
+    while(l<=r) {
+        long long int m=(l+r)/2;
+        if(arr[m]==xx)
+            return m;
+        if (arr[m]>xx)
+            r=m-1;
+        if (arr[m]<xx)
+            l=m+1;
+    }
+    return -1;
+}
+ 
+void Solve() {
+    long long int n; 
+    cin>>n;
+    vector<long long int>a(n);
+    vector<long long int>count(n+1,0);
+    vector<pll>pos(n+1,make_pair(-1,-1));
+    bool f=false;
+    for(long long int i=0;i<n;i++) {
+        cin>>a[i];
+        count[a[i]]++;
+        if(count[a[i]]==3) f=true;
+        if(pos[a[i]].first==-1) pos[a[i]].first=i;
+        else if(pos[a[i]].second==-1) pos[a[i]].second=i;
+        if(pos[a[i]].first!=-1 and pos[a[i]].second!=-1 and (pos[a[i]].second-pos[a[i]].first>1)) f=true;
+    }
+ 
+    if(f)cout<<"YES"<<endl;
+    else cout<<"NO"<<endl;
+}
+ 
+int main() {
+    T
+        Solve();
+    return 0;
+}
